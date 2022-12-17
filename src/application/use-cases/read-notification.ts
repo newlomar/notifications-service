@@ -25,7 +25,7 @@ export class ReadNotification {
       throw new NotificationNotFound();
     }
 
-    notification.cancel();
+    notification.read();
 
     await this.notificationsRepository.save(notification);
   }
