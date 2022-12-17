@@ -45,7 +45,7 @@ export class PrismaNotificationsRepository implements NotificationsRepository {
   }
 
   async create(notification: Notification): Promise<void> {
-    const raw = PrismaNotificaitonMapper.toPrisma(notification);
+    const raw = PrismaNotificationMapper.toPrisma(notification);
 
     await this.prisma.notification.create({
       data: raw,
@@ -53,7 +53,7 @@ export class PrismaNotificationsRepository implements NotificationsRepository {
   }
 
   async save(notification: Notification): Promise<void> {
-    const raw = PrismaNotificaitonMapper.toPrisma(notification);
+    const raw = PrismaNotificationMapper.toPrisma(notification);
 
     await this.prisma.notification.update({
       where: {
